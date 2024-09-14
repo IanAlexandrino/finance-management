@@ -9,10 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Setter
 @Getter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 @Entity(name = "users")
 @EqualsAndHashCode(of = "id")
@@ -28,6 +28,15 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
     private Boolean activated;
+
+    public User(String login, String email, String name, String password){
+        this.login = login;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.role = UserRole.USER;
+        this.activated = true;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
