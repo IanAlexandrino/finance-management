@@ -3,10 +3,10 @@ package org.example.financemanagement.models.user;
 import jakarta.validation.constraints.NotBlank;
 
 public record AuthenticationDTO(
-        @NotBlank
+        @NotBlank(message = "cannot be null or empty")
         String login,
 
-        @NotBlank
+        @NotBlank(message = "cannot be null or empty")
         String password
 ) {
 }

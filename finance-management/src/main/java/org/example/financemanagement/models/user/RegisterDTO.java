@@ -4,17 +4,17 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public record RegisterDTO(
-        @NotBlank
+        @NotBlank(message = "cannot be null or empty")
         String login,
 
-        @Email
-        @NotBlank
+        @Email(message = "must be a valid email address")
+        @NotBlank(message = "cannot be null or empty")
         String email,
 
-        @NotBlank
+        @NotBlank(message = "cannot be null or empty")
         String name,
 
-        @NotBlank
+        @NotBlank(message = "cannot be null or empty")
         String password
 ) {
 }
