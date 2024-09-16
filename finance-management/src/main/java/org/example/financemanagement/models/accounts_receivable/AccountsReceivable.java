@@ -2,7 +2,6 @@ package org.example.financemanagement.models.accounts_receivable;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.financemanagement.models.accounts_payable.dtos.AccountsPayableUpdateDTO;
 import org.example.financemanagement.models.accounts_receivable.dtos.AccountReceivableUpdateDTO;
 import org.example.financemanagement.models.accounts_receivable.dtos.AccountsReceivableCreateDTO;
 import org.example.financemanagement.models.accounts_receivable.enums.Status;
