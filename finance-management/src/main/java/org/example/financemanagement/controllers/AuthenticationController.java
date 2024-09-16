@@ -2,9 +2,9 @@ package org.example.financemanagement.controllers;
 
 import jakarta.validation.Valid;
 import org.example.financemanagement.infra.security.TokenService;
-import org.example.financemanagement.models.user.AuthenticationDTO;
-import org.example.financemanagement.models.user.LoginResponseDTO;
-import org.example.financemanagement.models.user.RegisterDTO;
+import org.example.financemanagement.models.user.dtos.AuthenticationDTO;
+import org.example.financemanagement.models.user.dtos.LoginResponseDTO;
+import org.example.financemanagement.models.user.dtos.RegisterDTO;
 import org.example.financemanagement.models.user.User;
 import org.example.financemanagement.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,18 @@
 package org.example.financemanagement.models.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.financemanagement.models.accounts_payable.AccountsPayable;
+import org.example.financemanagement.models.user.enums.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @ToString
@@ -28,6 +33,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
     private Boolean activated;
+
+    @OneToMany(mappedBy = "user")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Set<AccountsPayable> accountsPayables = new HashSet<>();
 
     public User(String login, String email, String name, String password){
         this.login = login;

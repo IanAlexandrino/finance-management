@@ -1,4 +1,4 @@
-package org.example.financemanagement.models.user;
+package org.example.financemanagement.models.user.enums;
 
 import lombok.Getter;
 

@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    // Query to bring a user by login
     UserDetails findByLogin(String login);
 }
